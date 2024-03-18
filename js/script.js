@@ -10,9 +10,21 @@ let addBtn = document.querySelector(".add-student");
 
 let students = JSON.parse(localStorage.getItem('students')) || [];
 
+students.forEach((student, index) => {
+    if (!student.id) {
+        student.id = index + 1; 
+    }
+});
+
 function saveLC() {
+    students.forEach((student, index) => {
+        if (!student.id) {
+            student.id = index + 1;
+        }
+    });
     localStorage.setItem('students', JSON.stringify(students));
 }
+
 function formatDateTime(date) {
     const day = date.getDate().toString().padStart(2, "0");
     const month = (date.getMonth() + 1).toString().padStart(2, "0");
@@ -27,9 +39,6 @@ function renderStudent(arr, list){
     list.innerHTML = "";
     arr.forEach(item => {
         let elItem = document.createElement('li');
-
-        let currentDate = new Date();
-        currentDate.setUTCHours(currentDate.getUTCHours());
 
         elItem.innerHTML = `
             <ul class="td-wrap">
@@ -116,7 +125,7 @@ addBtn.addEventListener('click', function() {
                 email: emailInput.value,
                 phone: phoneInput.value,
                 enrollnumber: enrollInput.value,
-                admissionDate: formatDateTime(new Date()), // Set the admission date here
+                admissionDate: formatDateTime(new Date()), 
             };
             students.push(data);
             saveLC();
@@ -151,7 +160,7 @@ function updateClick(id) {
                 <div class="form-img__wrapper">
                     <img class="form-img update-render-img" src="${data.img}" width="140" height="80"/>
                 </div>
-                <input class="visually-hidden update-get-img" type="file"/>
+                <input id="update-get-img" class="visually-hidden update-get-img" type="file"/>
             </label>
             <div class="update-wrap">
                 <div class="update-left">
@@ -182,7 +191,7 @@ function updateClick(id) {
     `;
 
     let elUpdateForm = document.querySelector(".update-form");
-    let elUpdateImgInput = document.querySelector(".update-get-img");
+    let elUpdateImgInput = document.getElementById("update-get-img");
     let elUpdateImg = document.querySelector(".update-render-img");
 
     elUpdateImgInput.addEventListener("change", function(evt){        
@@ -202,7 +211,6 @@ function updateClick(id) {
         elModalWrapper.classList.remove("open-modal");
     });
 }
-
 
 function deleteClick(id){
     const studentId = students.findIndex(item => item.id === id);
@@ -237,7 +245,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-
 const logoutButton = document.querySelector(".logout-wrap");
 
 logoutButton.addEventListener("click", function() {
@@ -247,7 +254,7 @@ logoutButton.addEventListener("click", function() {
 });
 
 const userAvatar = document.querySelector(".user-avatar");
-const fileInput = document.querySelector(".update-get-img");
+const fileInput = document.querySelector(".updateImages");
 
 userAvatar.addEventListener("click", function() {
     fileInput.click();
@@ -263,6 +270,5 @@ fileInput.addEventListener("change", function(evt) {
         }
     }
 });
-
 
 renderStudent(students, tBody);

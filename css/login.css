@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Risque&display=swap');
+
+body{
+    background: linear-gradient(48.76deg, rgb(254, 175, 0) 19.353%,rgb(248, 212, 66) 90.115%);
+}
+.line{
+    position: absolute;
+    width: 29px;
+    height: 0;
+    left: 585px;
+    top: 145px;
+    transform: rotate(90.00deg);
+    border: 3px solid rgb(248, 212, 66);
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    margin: 103px auto;
+    width: 430px;
+    height: 535px;
+    border-radius: 20px;
+    box-shadow: 2px 5px 10px 0px rgba(0, 0, 0, 0.3);
+    background: rgb(255, 255, 255);
+    font-family: Montserrat;
+}
+h2{ 
+    margin-bottom: 40px;
+    color: rgb(0, 0, 0);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 39px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+span{
+    color: rgb(0, 0, 0);
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 27px;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+}
+p{
+    color: rgb(108, 108, 108);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0%;
+}
+.form-title{
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+label{
+    padding-bottom: 5px;
+    margin: 0 30px;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    color: rgb(108, 108, 108);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+input{
+    display: block;
+    padding: 15px 0 15px 15px;
+    border: none;
+    outline: none;
+    margin: 0 30px 20px 30px;
+    box-sizing: border-box;
+    border: 1px solid rgb(229, 229, 229);
+    border-radius: 4px;
+    background: rgb(255, 255, 255);
+    transition: all 0.4s ease;
+}
+button{
+    padding: 15px 0;
+    border: none;
+    outline: none;
+    margin: 20px 30px 0 30px;
+    border-radius: 4px;
+    background: rgb(254, 175, 0);
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0%;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+input:focus{
+    border: 1px solid rgb(254, 175, 0);
+}
+button:hover{
+    opacity: 0.8;
+}
+button:focus{
+    opacity: 0.4;
+}
+::placeholder{
+    color: rgb(205, 205, 205);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    letter-spacing: 0%;
+    text-align: left;
+}

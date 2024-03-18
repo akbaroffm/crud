@@ -1,0 +1,78 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/main.css">
+        <title>CRUD</title>
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                <div class="site-header">
+                    <div class="site-name">
+                        <div class="line"></div>
+                        <a class="site-name__link" href="/">CRUD OPERATIONS</a>
+                        <img src="./images/play.svg" alt="play">
+                    </div>
+                    <div class="header-input">
+                        <input class="search" type="text" placeholder="Search...">
+                        <img src="./images/notification.svg" alt="notification">
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="inner-wrap">
+                    <h3>Students List</h3>
+                    <div class="wrap-right">
+                        <img class="sort-img" src="./images/sort.svg" alt="sort">
+                        <button class="add-student">ADD NEW STUDENT</button>
+                    </div>
+                </div>
+                <hr>
+                <ul class="table">
+                    <li class="thead">
+                        <ul class="tr-wrap">
+                            <li></li>
+                            <li class="table-item">Name</li>
+                            <li class="table-item">Email</li>
+                            <li class="table-item">Phone</li>
+                            <li class="table-item">Enroll number</li>
+                            <li class="table-item">Data admission</li>
+                            <li></li>
+                        </ul>
+                    </li>
+                    <li class="tbody">
+                        <!-- Student list will be here -->
+                        
+                    </li>
+                </ul>
+                
+            </div>
+        </main>
+        <nav class="nav-list">
+            <div class="user-profile">
+                <img class="user-avatar" src="./images/me.jpeg" alt="User Avatar" width="128" height="128" style="border-radius: 50%;">
+                <input class="visually-hidden update-get-img" type="file"/>
+                <span class="user-name"></span>
+                <p>Admin</p>
+            </div>
+
+            <ul class="list">
+                <li class="list-item">
+                    <img class="student-icon" src="./images/student.svg" alt="Student Icon">
+                    <a class="list-link" href="#">Students</a>
+                </li>
+            </ul>
+            <div class="logout-wrap">
+                <strong>Logout</strong>
+                <img src="./images/logout.svg" alt="Logout Button">
+            </div>
+        </nav>        
+
+        <div id="modal-wrapper" class="modal-wrapper">
+            <div class="modal"></div>
+        </div>
+    </body>
+    <script src="./js/script.js"></script>
+    </html>
